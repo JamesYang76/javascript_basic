@@ -259,3 +259,4 @@ function Person(name) {
 }
 var foo = new Person("aaa");//{age: 10}
 ```
+### Object
