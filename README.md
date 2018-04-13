@@ -151,3 +151,16 @@ var add = fucntion (x,y) {
     console.log("immediate function  = "+ name);
 })('foo');//"immediate function  = foo"
 ```
+#### arguments
+```javascript
+function func(a,b) {
+  console.log(a,b);
+}
+
+func();//undefined undefined
+func(1);//1 undefined
+func(1,2,3);//1 2
+func.length//2
+
+
+```
