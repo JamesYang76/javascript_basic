@@ -156,11 +156,17 @@ var add = fucntion (x,y) {
 function func(a,b) {
   console.log(a,b);
 }
-
 func();//undefined undefined
 func(1);//1 undefined
 func(1,2,3);//1 2
 func.length//2
-
-
 ```
+arguments is the Array-like objects
+ ```javascript
+function sum() {
+   var result =0;
+   for (var i =0; i < arguments.length;i++) result += arguments[i];
+   return result;
+}
+console.log(sum(1,2,3,4,5));//15
+ ```
