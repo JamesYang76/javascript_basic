@@ -24,7 +24,6 @@ console.log(!!null);//false
 console.log(!!undefined);//false
 console.log(!!{});//true
 ```
-
 #### == and ===
 In case of ==, if there are different types between two operands, make the same type.\
 In case of ===, also compare types.
@@ -32,8 +31,6 @@ In case of ===, also compare types.
 console.log(1=='1');//true
 console.log(1==='1');//false
 ```
-
-
 #### read/write and add/delete object property
 There are two ways: . and []\
 If there is no property, undefined return
@@ -60,7 +57,7 @@ console.log(obj[0]);//'foo'
 console.log(obj['0']);//'foo'
 
 ```
-### Arra
+### Array
 #### Array define
 ```javascript
 var foo = new Array(3);
