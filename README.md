@@ -170,3 +170,50 @@ function sum() {
 }
 console.log(sum(1,2,3,4,5));//15
  ```
+#### this
+```javascript
+//this is bind to myObj
+var myObj = {
+   name:'foo',
+   sayName:function() {
+      console.log(this.name); 
+   }
+};
+myObj.sayName();//'foo'
+
+//this is bind to window
+var test = "This is a test";
+console.log(window.test); //"This is a test"
+ var sayFoo = function() {
+   console.log(this.test);
+ }
+sayFoo();///"This is a test"
+
+var value = 100;
+var myObj = {
+   value: 1,
+   func1:function() {
+      this.value += 1; //2 
+      var func2 = function() { 
+         this.value += 1 //101
+         
+         var func3 = function() {
+            this.value += 2 //101
+         }
+         func3();
+      }
+      func2();
+   }
+};
+```
+#### constructor
+```javascript
+function Person(name) {
+   this.name = name;
+}
+var foo = new Person('bar');
+foo.name;//'bar'
+Person('window name');
+window.name;//'window name'
+```
+
