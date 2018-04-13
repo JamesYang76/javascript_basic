@@ -195,10 +195,10 @@ var myObj = {
    func1:function() {
       this.value += 1; //2 
       var func2 = function() { 
-         this.value += 1 //101
+         this.value += 1; //101
          
          var func3 = function() {
-            this.value += 2 //101
+            this.value += 1; //102
          }
          func3();
       }
