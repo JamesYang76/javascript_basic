@@ -121,6 +121,8 @@ fruits.slice();// ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango']
 fruits.slice(2);//["Lemon", "Apple", "Mango"]
 fruits.slice(2,3);//["Lemon"]
 fruits.slice(1, -2);//["Orange", "Lemon"]
+fruits;// ["Banana", "Orange", "Lemon", "Apple", "Mango"]
+
 ```
 #### Array-like objects
 ```javascript
@@ -228,4 +230,32 @@ foo.name;//'bar'
 Person('window name');
 window.name;//'window name'
 ```
+#### return
+In javascript, function always return\
+If there is no return, undefined returns\
+If there is no return in constructor, object returns\
+If return is not object in constructor,  object returns
+```javascript
+function testFn() {
+ console.log(this.test);
+}
+var retVal = testFn();
+retVal;//undefined
 
+function Person(name) {
+   this.name = name;
+}
+var foo = new Person("bar");
+
+function Person(name) {
+   this.name = name;
+   return 10;
+}
+var foo = new Person("aaa");//Person {name: "aaa"}
+
+function Person(name) {
+   this.name = name;
+   return {age:10};
+}
+var foo = new Person("aaa");//{age: 10}
+```
