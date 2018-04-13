@@ -260,3 +260,18 @@ function Person(name) {
 var foo = new Person("aaa");//{age: 10}
 ```
 ### Object
+#### Define
+```javascript
+var foo = new Object();
+foo.name = 'foo';
+foo.__proto__;//Object()
+
+var bar = { name :'bar'};
+bar.__proto; //Object()
+
+function Person(name) {
+   this.name = name;
+}
+var you = new Person('you');
+you.__proto__;//Person()
+```
