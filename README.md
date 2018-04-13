@@ -25,6 +25,15 @@ console.log(!!undefined);//false
 console.log(!!{});//true
 ```
 
+#### == and ===
+In case of ==, if there are different types between two operands, make the same type.
+In case of ===, also compare types.
+```javascript
+console.log(1=='1');//true
+console.log(1==='1');//false
+```
+
+
 #### read/write and add/delete object property
 There are two ways: . and []\
 If there is no property, undefined return
@@ -35,6 +44,7 @@ var foo = {
 };
 console.log(foo.name); //foo
 console.log(foo['major']);//computer
+console.log(foo[major]);//undefined
 console.log(foo.nickname);//undefined
 
 //for add new property
@@ -44,8 +54,13 @@ foo['age'] = 18;
 //for delete property
 delete foo.nickname;
 delete foo['age'];
+
+var obj = { 0:'foo',1:'bar'};
+console.log(obj[0]);//'foo'
+console.log(obj['0']);//'foo'
+
 ```
-### Array
+### Arra
 #### Array define
 ```javascript
 var foo = new Array(3);
@@ -94,7 +109,18 @@ delete arr[2];
 console.log(arr.length);//3
 console.log(arr);//["zero", "one",undefined]
 
-//splice(start index, delete count)
 
+var fruits = ["Strawberry", "Banana", "Mango"];
+var pos = fruits.indexOf('Banana'); //1
+//splice(start index, delete count)
+var removedItem = fruits.splice(pos, 1);//["Banana"]
+console.log(fruits);//["Strawberry", "Mango"]
+```
+#### Array-like objects
+```javascript
+var obj = { name:'foo',length:5};
+obj.push('baz');//error
+Array.prototype.push.apply(obj,['baz']);//2
+console.log(obj);//{1: "baz", name: "foo", length: 2}
 ```
 
