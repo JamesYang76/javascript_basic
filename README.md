@@ -112,6 +112,14 @@ var pos = fruits.indexOf('Banana'); //1
 //splice(start index, delete count)
 var removedItem = fruits.splice(pos, 1);//["Banana"]
 console.log(fruits);//["Strawberry", "Mango"]
+
+
+//slice(start index, end index -1)
+var fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
+fruits.slice();// ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango']
+fruits.slice(2);//["Lemon", "Apple", "Mango"]
+fruits.slice(2,3);//["Lemon"]
+fruits.slice(1, -2);//["Orange", "Lemon"]
 ```
 #### Array-like objects
 ```javascript
@@ -166,6 +174,9 @@ arguments is the Array-like objects
 function sum() {
    var result =0;
    for (var i =0; i < arguments.length;i++) result += arguments[i];
+   
+   // change  Array-like objects into Array type
+   var arg = Array.prototypes.slice.apply(arguments); 
    return result;
 }
 console.log(sum(1,2,3,4,5));//15
