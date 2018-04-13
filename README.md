@@ -113,7 +113,7 @@ var pos = fruits.indexOf('Banana'); //1
 var removedItem = fruits.splice(pos, 1);//["Banana"]
 console.log(fruits);//["Strawberry", "Mango"]
 ```
-#### slice 
+#### Copy an Array 
 ```javascript
 //slice(start index, end index -1)
 var fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
