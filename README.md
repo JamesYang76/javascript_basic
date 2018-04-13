@@ -115,7 +115,7 @@ console.log(fruits);//["Strawberry", "Mango"]
 ```
 #### Array-like objects
 ```javascript
-var obj = { name:'foo',length:5};
+var obj = { name:'foo',length:1};
 obj.push('baz');//error
 Array.prototype.push.apply(obj,['baz']);//2
 console.log(obj);//{1: "baz", name: "foo", length: 2}
