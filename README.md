@@ -26,7 +26,7 @@ console.log(!!{});//true
 ```
 
 #### == and ===
-In case of ==, if there are different types between two operands, make the same type.
+In case of ==, if there are different types between two operands, make the same type.\
 In case of ===, also compare types.
 ```javascript
 console.log(1=='1');//true
