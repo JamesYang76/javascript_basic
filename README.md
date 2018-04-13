@@ -121,3 +121,33 @@ Array.prototype.push.apply(obj,['baz']);//2
 console.log(obj);//{1: "baz", name: "foo", length: 2}
 ```
 
+### Function
+#### function expression
+```javascript
+var factorialVar = function factorial(n) {
+   if( n <= 1) return 1;
+   return n * factorial(n-1); //only can access inner
+};
+factorialVar(3);//6
+factorial(3);//error
+```
+#### function hoisting
+```javascript
+//for function statement
+add(2,3); //5
+fucntion add(x,y) {
+   return x+y;
+}
+
+//for function expression
+add(2,3);//error
+var add = fucntion (x,y) {
+   return x+y;
+};
+```
+#### immediate function
+```javascript
+(function(name) {
+    console.log("immediate function  = "+ name);
+})('foo');//"immediate function  = foo"
+```
