@@ -122,7 +122,14 @@ fruits.slice(2);//["Lemon", "Apple", "Mango"]
 fruits.slice(2,3);//["Lemon"]
 fruits.slice(1, -2);//["Orange", "Lemon"]
 fruits;// ["Banana", "Orange", "Lemon", "Apple", "Mango"]
-
+```
+#### Array to String
+``` javascript
+var a = ['Wind', 'Rain', 'Fire'];
+a.join();      // 'Wind,Rain,Fire'
+a.join(', ');  // 'Wind, Rain, Fire'
+a.join(' + '); // 'Wind + Rain + Fire'
+a.join('');    // 'WindRainFire'
 ```
 #### Array-like objects
 ```javascript
@@ -132,6 +139,15 @@ Array.prototype.push.apply(obj,['baz']);//2
 console.log(obj);//{1: "baz", name: "foo", length: 2}
 ```
 
+### String
+#### String to Array
+```javascript
+var myString = 'Hello World. How are you doing?';
+var splits = myString.split(' ', 3);
+console.log(splits);//["Hello", "World.", "How"]
+var splits = myString.split(' ');
+console.log(splits);//["Hello", "World.", "How", "are", "you", "doing?"]
+```
 ### Function
 #### function expression
 ```javascript
