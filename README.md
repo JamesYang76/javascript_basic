@@ -378,6 +378,70 @@ var foo = new Person('foo');
 foo.hasOwnProperty('name'); //true
 foo.hasOwnProperty('toString');//false
 ```
+
+### Inheritance
+
+#### traditional 
+```javascript
+function Person() {
+  this.name = 'anonymous';
+  this.sayHello = function () {
+      console.log(this.name);
+  }
+}
+function Unikys() {
+  var obj = new Person();
+  obj.name = "Unikys";
+  obj.job = "Nothing";
+  return obj;
+}
+
+var unikys = new Unikys();
+unikys.sayHello();//"Unikys"
+
+unikys instanceof Person;//true
+unikys instanceof Unikys;//false
+```
+#### using prototype
+```javascript
+function Person() {
+  this.name = 'anonymous';
+  this.sayHello = function () {
+      console.log(this.name);
+  }
+}
+function Unikys() {
+  this.name = "Unikys";
+}
+Unikys.prototype = new Person();
+unikys instanceof Person;//true
+unikys instanceof Unikys;//true
+```
+#### using Object.create
+```javascript
+/*
+Object.create = function (o) {
+   function F() {}
+   F.prototype = o;
+   return new F();
+}
+*/
+
+var person = {
+   name : 'anonymous',
+   sayHello:function() {
+     console.log(this.name);
+   }
+};
+
+var unikys = Object.create(person);
+unikys.name ='Unikys';
+unikys.sayHello();//"Unikys"
+unikey instanceof person; //error
+person.isPrototypeOf(unikys));//true
+Object.getPrototypeOf(unikys) === person;//true
+
+```
 ### Closuer
 The function points to a variable in outer function.
 ```javascript
