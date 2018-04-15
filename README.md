@@ -312,7 +312,8 @@ bar.country;//"nz"
 ```
 
 #### instanceof
-The instanceof operator tests whether the prototype property of a constructor appears anywhere in the prototype chain of an object.
+The instanceof operator tests whether the prototype property of a constructor appears anywhere\
+in the prototype chain of an object.
 ```javascript
 function Person(name) {
    this.name = name;
@@ -329,4 +330,14 @@ function Person(name) {
 var foo = Person('foo');
 var foo = new Person('foo');
 ```
-
+#### hasOwnProperty
+This method can be used to determine whether an object has the specified property\
+as a direct property of that object
+```javascript
+function Person(name) {
+   this.name = name;
+}
+var foo = new Person('foo');
+foo.hasOwnProperty('name'); //true
+foo.hasOwnProperty('toString');//false
+```
