@@ -123,6 +123,31 @@ fruits.slice(2,3);//["Lemon"]
 fruits.slice(1, -2);//["Orange", "Lemon"]
 fruits;// ["Banana", "Orange", "Lemon", "Apple", "Mango"]
 ```
+
+#### map
+The map() method creates a new array with the results of calling a provided function\
+on every element in the calling array.
+```javascript
+var numbers = [1, 4, 9];
+var doubles = numbers.map(function(num) {
+  return num * 2;
+});
+```
+#### forEach/reduce
+```javascript
+var numbers = [1, 4, 9];
+numbers.forEach(function(element) {
+  console.log(element);
+});
+
+var sum = [0, 1, 2, 3].reduce(function (accumulator, currentValue) {
+  return accumulator + currentValue;
+}, 0); //6
+
+var sum = [0, 1, 2, 3].reduce(function (accumulator, currentValue) {
+  return accumulator + currentValue;
+}, 4); //10
+```
 #### Array to String
 ``` javascript
 var a = ['Wind', 'Rain', 'Fire'];
