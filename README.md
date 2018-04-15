@@ -403,7 +403,19 @@ var foo = new Person('foo');
 foo.hasOwnProperty('name'); //true
 foo.hasOwnProperty('toString');//false
 ```
+#### call/apply/bind
+```javascript
+var obj = {name:"James"};
+window.name = 'Global';
+var greeting = function(town){
+    return "welcome "+this.name+ " in " + town;
+};
 
+greeting.call(obj,"Newtown");//"welcome James in Newtown"
+greeting.apply(obj,["Newtown"]);//"welcome James in Newtown"
+greeting.apply();//"welcome Global in undefined"
+greeting.bind(obj)("Wellinton"); //"welcome James in Wellinton"
+```
 ### Inheritance
 
 #### traditional 
