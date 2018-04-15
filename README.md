@@ -362,3 +362,79 @@ var foo = new Person('foo');
 foo.hasOwnProperty('name'); //true
 foo.hasOwnProperty('toString');//false
 ```
+### Closuer
+The function points to a variable in outer function.
+```javascript
+var add = (function () {
+    var counter = 0;
+    return function () {return counter += 1;} //<-------closure
+})();
+add();//1
+add();//2
+```
+#### Private method
+```javascript
+var counter = (function() {
+  var privateCounter = 0;
+  function changeBy(val) {
+    privateCounter += val;
+  }
+  return {
+    increment: function() {
+      changeBy(1);
+    },
+    decrement: function() {
+      changeBy(-1);
+    },
+    value: function() {
+      return privateCounter;
+    }
+  };   
+})();
+console.log(counter.value()); // logs 0
+counter.increment();
+counter.increment();
+console.log(counter.value()); // logs 2
+counter.decrement();
+console.log(counter.value()); // logs 1
+
+
+var makeCounter = function() {
+  var privateCounter = 0;
+  function changeBy(val) {
+    privateCounter += val;
+  }
+  return {
+    increment: function() {
+      changeBy(1);
+    },
+    decrement: function() {
+      changeBy(-1);
+    },
+    value: function() {
+      return privateCounter;
+    }
+  }  
+};
+var counter1 = makeCounter();
+var counter2 = makeCounter();
+alert(counter1.value()); /* Alerts 0 */
+counter1.increment();
+counter1.increment();
+alert(counter1.value()); /* Alerts 2 */
+counter1.decrement();
+alert(counter1.value()); /* Alerts 1 */
+alert(counter2.value()); /* Alerts 0 */
+```
+#### Watch out
+```javascript
+for(var i = 1; i <=4; i++) {
+   setTimeout(function() { console.log(i)}, i*1000);
+}
+
+for(var i = 1; i <=4; i++) {
+   (function(currentI) {
+      setTimeout(function() { console.log(currentI)}, currentI * 1000);
+   })(i);
+}
+```
