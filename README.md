@@ -282,6 +282,14 @@ function printFunc(Func) {
    console.log(Func());
 }
 printFunc(printVal);//"value1"
+
+
+function printFunc() {
+  myG ="global G";
+}
+myG;//erro
+printFunc();
+myG;//"global G";
 ```
 #### property
 ```javascript
