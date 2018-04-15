@@ -221,6 +221,27 @@ var myObj = {
    }
 };
 ```
+#### scope
+scope is defined when function is made.
+```javascript
+var value ="value1";
+function printFunc() {
+   var value = "value2";
+   function printVal() {
+     return value;
+   }
+console.log(printVal());
+}
+printFunc();//"value2"
+
+var value ="value1";
+function printVal() { return value;}
+function printFunc(Func) {
+   var value = "value2";
+   console.log(Func());
+}
+printFunc(printVal);//"value1"
+```
 #### property
 ```javascript
 function Person(name) {
