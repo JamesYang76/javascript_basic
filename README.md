@@ -203,6 +203,7 @@ console.log(window.test); //"This is a test"
  }
 sayFoo();///"This is a test"
 
+//when innner function called, this is bind to window 
 var value = 100;
 var myObj = {
    value: 1,
@@ -220,13 +221,15 @@ var myObj = {
    }
 };
 ```
-#### constructor
+#### property
 ```javascript
 function Person(name) {
    this.name = name;
 }
 var foo = new Person('bar');
 foo.name;//'bar'
+
+//becasue of no new, this point to window.
 Person('window name');
 window.name;//'window name'
 ```
@@ -259,6 +262,20 @@ function Person(name) {
 }
 var foo = new Person("aaa");//{age: 10}
 ```
+#### constructor and prototype
+A function has prototype which poiont to a prototype object\
+A prototype object has a connstrutor which point to the function
+```javascript
+function Person(name) {
+   this.name = name;
+}
+/*
+Person        |              |      
+  prototype --|------------->| prototype object 
+              |<-------------|--construtor
+*/
+```
+
 ### Object
 #### Define
 ```javascript
@@ -277,9 +294,9 @@ you.__proto__;//Person()
 ```
 
 #### Prototype chaining
-Constructor's prototype and object's _proto_ point out the same object which is the prototype object.\
+A function(constructor)'s prototype and object's _proto_ point to the same object which is the prototype object.\
 When read/write properties, a object can go up to _proto_ and check proporties if the object has no properties.
-````javascript
+```javascript
 function Person(name) {
    this.name = name;
 }
@@ -292,11 +309,11 @@ foo.country;//"nz"
 bar.country;//"nz"
 foo.country = "US";
 bar.country;//"nz"
-````
+```
 
 #### instanceof
 The instanceof operator tests whether the prototype property of a constructor appears anywhere in the prototype chain of an object.
-````javascript
+```javascript
 function Person(name) {
    this.name = name;
 }
@@ -312,5 +329,4 @@ function Person(name) {
 var foo = Person('foo');
 var foo = new Person('foo');
 ```
-
 
