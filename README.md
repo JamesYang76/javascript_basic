@@ -238,7 +238,7 @@ var myObj = {
 };
 ```
 #### scope
-scope is defined when function is made.
+scope is defined when function,with,catch are made.
 ```javascript
 var value ="value1";
 function printFunc() {
@@ -442,6 +442,22 @@ person.isPrototypeOf(unikys));//true
 Object.getPrototypeOf(unikys) === person;//true
 
 ```
+### Loop
+
+#### for in
+```javascript
+var person = {
+   name : 'anonymous',
+   sayHello:function() {} };
+
+var unikys = Object.create(person);
+for (var i in unikys) {
+   console.log("unikys["+i+"] = "+ unikys[i]);
+}
+```
+
+
+
 ### Closuer
 The function points to a variable in outer function.
 ```javascript
