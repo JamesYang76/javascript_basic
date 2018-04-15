@@ -275,3 +275,42 @@ function Person(name) {
 var you = new Person('you');
 you.__proto__;//Person()
 ```
+
+#### Prototype chaining
+Constructor's prototype and object's _proto_ point out the same object which is the prototype object.\
+When read/write properties, a object can go up to _proto_ and check proporties if the object has no properties.
+````javascript
+function Person(name) {
+   this.name = name;
+}
+var foo = new Person('foo');
+var bar = new Person('bar');
+Person.prototype.getName = function() { return this.name };
+Person.prototype.country = 'nz';
+foo.getName();//"foo"
+foo.country;//"nz"
+bar.country;//"nz"
+foo.country = "US";
+bar.country;//"nz"
+````
+
+#### instanceof
+The instanceof operator tests whether the prototype property of a constructor appears anywhere in the prototype chain of an object.
+````javascript
+function Person(name) {
+   this.name = name;
+}
+var foo = new Person('foo');
+console.log(foo instanceof Person); //true
+console.log(foo instanceof Object); //true
+
+function Person(name) {
+   if(!(this instanceof arguments.callee))
+      return new Person(name);
+   this.name = name;
+}
+var foo = Person('foo');
+var foo = new Person('foo');
+```
+
+
