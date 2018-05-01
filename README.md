@@ -133,6 +133,17 @@ var doubles = numbers.map(function(num) {
   return num * 2;
 });
 ```
+#### filter
+The filter() method creates a new array with all elements\
+that pass the test implemented by the provided function.
+```javascript
+function isBigEnough(value) {
+  return value >= 10;
+}
+var filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
+// filtered is [12, 130, 44]
+```
+
 #### forEach/reduce
 ```javascript
 var numbers = [1, 4, 9];
