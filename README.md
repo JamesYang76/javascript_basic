@@ -159,6 +159,16 @@ var sum = [0, 1, 2, 3].reduce(function (accumulator, currentValue) {
   return accumulator + currentValue;
 }, 4); //10
 ```
+
+#### includes
+The includes() method determines whether an array includes a certain element,\
+returning true or false as appropriate.
+```javascript
+var pets = ['cat', 'dog', 'bat'];
+console.log(pets.includes('cat'));// expected output: true
+console.log(pets.includes('at'));// expected output: false
+```
+
 #### Array to String
 ``` javascript
 var a = ['Wind', 'Rain', 'Fire'];
