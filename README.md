@@ -123,6 +123,17 @@ fruits.slice(2,3);//["Lemon"]
 fruits.slice(1, -2);//["Orange", "Lemon"]
 fruits;// ["Banana", "Orange", "Lemon", "Apple", "Mango"]
 ```
+#### concat
+```javascript
+var alpha = ['a', 'b', 'c'];
+var numeric = [1, 2, 3];
+alpha.concat(numeric); // result in ['a', 'b', 'c', 1, 2, 3]
+
+var alpha = ['a', 'b', 'c'];
+var alphaNumeric = alpha.concat(1, [2, 3]);
+console.log(alphaNumeric); // results in ['a', 'b', 'c', 1, 2, 3]
+```
+
 
 #### map
 The map() method creates a new array with the results of calling a provided function\
