@@ -57,6 +57,35 @@ console.log(obj[0]);//'foo'
 console.log(obj['0']);//'foo'
 
 ```
+
+### Json
+#### JSON.parse()
+The JSON.parse() method parses a JSON string,\
+constructing the JavaScript value or object described by the string.
+```javascript
+var json = '{"result":true, "count":42}';
+obj = JSON.parse(json);
+
+JSON.parse('{}');              // {}
+JSON.parse('true');            // true
+JSON.parse('"foo"');           // "foo"
+JSON.parse('[1, 5, "false"]'); // [1, 5, "false"]
+JSON.parse('null');            // nul
+```
+#### JSON.stringify()
+The JSON.stringify() method converts a JavaScript value to a JSON string
+```javascript
+console.log(JSON.stringify({ x: 5, y: 6 }));// expected output: "{"x":5,"y":6}"
+
+JSON.stringify({});                    // '{}'
+JSON.stringify(true);                  // 'true'
+JSON.stringify('foo');                 // '"foo"'
+JSON.stringify([1, 'false', false]);   // '[1,"false",false]'
+JSON.stringify([NaN, null, Infinity]); // '[null,null,null]'
+JSON.stringify({ x: 5 });              // '{"x":5}'
+```
+
+
 ### Array
 #### Array define
 ```javascript
