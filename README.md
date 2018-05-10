@@ -31,6 +31,15 @@ In case of ===, also compare types.
 console.log(1=='1');//true
 console.log(1==='1');//false
 ```
+
+#### &&
+```javascript
+const result = true && 'Hello World';
+console.log(result); // output: Hello World
+
+const result = false && 'Hello World';
+console.log(result); // output: false
+```
 #### read/write and add/delete object property
 There are two ways: . and []\
 If there is no property, undefined return
